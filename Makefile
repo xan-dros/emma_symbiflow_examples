@@ -20,6 +20,12 @@ PYTHON_SRCS=$(shell find . -name "*.py" -not -path "./env/*" -not -path "./symbi
 JSON_SRCS=$(shell find . -name "*.json" -not -path "./env/*" -not -path "./symbiflow/*")
 VERILOG_SRCS=$(shell find . -name "*.v" -not -path "./env/*" -not -path "./symbiflow/*")
 
+PICO_DIR := ./xc7
+
+pico:
+	cd ${PICO_DIR} && \
+	TARGET=zynq_z2 make download -C picosoc_demo
+
 env:
 	conda env create -f environment.yml
 	conda activate f4pga-examples
