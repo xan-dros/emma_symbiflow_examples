@@ -1,0 +1,15 @@
+# pynq.pcf
+
+# 125 Mhz CLK			# baud_rate for picosoc must be set to 576000 (460800 * 1.25)
+set_io clk H16			# because default_clock for picosoc usually @ 100 Mhz !
+
+# UART
+set_io rx W14			# PMODB_port on pynq_z2  || pin2 || upper row from right
+set_io tx Y14			# PMODB_port on pynq_z2  || pin1 || upper row from right (corner)
+
+# LEDs
+set_io led[0] R14
+set_io led[1] P14
+set_io led[2] N16
+set_io led[3] M14
+

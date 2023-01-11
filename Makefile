@@ -23,6 +23,8 @@ VERILOG_SRCS=$(shell find . -name "*.v" -not -path "./env/*" -not -path "./symbi
 PICO_DIR := ./xc7
 
 pico:
+	chmod +x copy_script_picosoc
+	./copy_script_picosoc
 	cd ${PICO_DIR} && \
 	TARGET=zynq_z2 make download -C picosoc_demo
 
